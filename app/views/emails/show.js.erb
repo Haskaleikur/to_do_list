@@ -1,0 +1,13 @@
+
+lines = document.getElementsByTagName("tr");
+for(count = 1; count <lines.length; count++){
+    if (lines[count].getElementsByTagName("a")[0].text == "<%=@email.object%>") {
+       pos=count
+    }
+};
+
+document.getElementsByTagName("tr")[pos].insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>")
+
+
+
+

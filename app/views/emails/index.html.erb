@@ -1,0 +1,21 @@
+
+
+  <table class="table">
+  <thead class="thead-dark" id="select-email">
+    <tr>
+      <th scope="col">
+      <%= button_to "Reçevoir emails", emails_path, remote: true %>
+      </th>
+      <th scope="col">Liste des emails</th>
+      <th id="select-email" scope="col">Email selectionné</th>
+    </tr>
+  </thead>
+  <tbody id="contenu">
+  <% @emails.each do |tada| %>
+    <tr>
+      <th scope="row"></th>
+      <td id=<%=tada.id%>><%= link_to tada.object, email_path(tada.id), remote: true %></td>               
+    </tr>
+  <% end %> 
+   
+</table>
